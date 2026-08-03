@@ -1,0 +1,14 @@
+{
+  "chats": {
+    "-1003995619821": {
+      "title": "test",
+      "timezone": "Europe/Moscow",
+      "topics": {
+        "raids": 6,
+        "camps": 8,
+        "announcements": null
+      },
+      "admins": []
+    }
+  }
+}
