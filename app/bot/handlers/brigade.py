@@ -384,6 +384,12 @@ async def player_card_callback(
             )
         )
 
+        talents_text = (
+            format_number(talent_points_total)
+            if talent_points_total is not None
+            else "нет данных"
+        )
+
         weekly_rank = player.get(
             "weekly_rank"
         )
@@ -407,11 +413,7 @@ async def player_card_callback(
             f"💥 <b>Недельный урон:</b>\n"
             f"{format_number(player['weekly_damage'])}\n\n"
             f"🧬 <b>Таланты:</b>\n"
-            f"{(
-                format_number(talent_points_total)
-                if talent_points_total is not None
-                else 'нет данных'
-            )}"
+            f"{talents_text}"
         )
 
         await edit_message(
@@ -432,6 +434,7 @@ async def player_card_callback(
 
     finally:
         await api_client.close()
+
 
 @router.callback_query(
     F.data == "brigade:invite"
